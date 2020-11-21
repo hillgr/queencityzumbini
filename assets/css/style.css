@@ -95,7 +95,7 @@ h6 {
 
 #kanga {
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   background: url("../img/grass_bg.jpg") top center;
   background-size: cover;
   color: white;
@@ -103,7 +103,7 @@ h6 {
 
 #contact {
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   background: url("../img/grass_bg.jpg") top center;
   background-size: cover;
 }
