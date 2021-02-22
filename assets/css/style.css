@@ -27,6 +27,17 @@ button:hover {
   background-color: rgb(226, 1, 119) !important;
 }
 
+.btn-secondary,
+button {
+  background-color: rgb(226, 1, 119) !important;
+  border-color: rgb(226, 1, 119) !important;
+}
+
+.btn-secondary:hover,
+button:hover {
+  background-color: rgb(110, 32, 126) !important;
+}
+
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
