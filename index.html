@@ -698,6 +698,7 @@
       var message = document.getElementById("message").value;
       if (name && email && message) {
         $('.sent-message').show();
+        return true;
       } else {
         alert("Please fill out all fields");
       }
