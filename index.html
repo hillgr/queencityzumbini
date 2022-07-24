@@ -697,8 +697,9 @@
       var email = document.getElementById("email").value;
       var message = document.getElementById("message").value;
       if (name && email && message) {
-        alert("Please fill out all fields");
         $('.sent-message').show();
+      } else {
+        alert("Please fill out all fields");
       }
     }
   </script>

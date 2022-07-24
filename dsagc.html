@@ -189,13 +189,13 @@ $(function () {
     var kidnames = document.getElementById("kidnames").value;
     // var kidages = document.getElementById("kidages").value;
     if (name && email && kidnames) {
-      alert("Please fill out all fields");
       $('.sent-message').show();
       // return false;
     }
-    // else {
+    else {
+      alert("Please fill out all fields");
     //   return true;
-    // }
+    }
   }
 </script>
 </body>
