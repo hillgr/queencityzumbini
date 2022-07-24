@@ -136,7 +136,7 @@
             <div class="error-message"></div>
             <div class="sent-message">Your message has been sent. Thank you!</div>
           </div>
-          <div class="text-center"><button type="submit" onclick="$('.sent-message').show();">Send Message</button></div>
+          <div class="text-center"><button type="submit" onclick="checkBeforeSubmit();">Send Message</button></div>
         </form>
       </div>
     </section>
@@ -180,6 +180,23 @@ $(function () {
     $hero.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
   });
 });
+</script>
+<script>
+  function checkBeforeSubmit() {
+    var name = document.getElementById("name").value;
+    // var phone = document.getElementById("phone").value;
+    var email = document.getElementById("email").value;
+    var kidnames = document.getElementById("kidnames").value;
+    // var kidages = document.getElementById("kidages").value;
+    if (name && email && kidnames) {
+      alert("Please fill out all fields");
+      $('.sent-message').show();
+      // return false;
+    }
+    // else {
+    //   return true;
+    // }
+  }
 </script>
 </body>
 
