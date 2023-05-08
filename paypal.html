@@ -77,91 +77,92 @@
     <section id="upcoming" class="about">
       <div class="container">
         <div style="text-align:center;">
-            <img src="assets/img/qcz_logo.png" alt="Logo" class="img-fluid" style="border:none;width:40%;z-index:99;">
-          </div>
-          <br>
-  
-          <p>Join us in our 3-class mini session at LilyPad! Zumbini classes will be held once per month during the summer months using the wonderful music of our TJ & His PJs volume! Sing, dance, and play instruments with your child and then stay to play on LilyPad's awesome indoor equipment. Included with your session registration is the digital download of all of the music used in class, so you can keep the party going at home or on the road!</p>
-  
-          <p>Classes will be held on Wednesdays at 10:00 am. Please arrive a few minutes early to get signed in.</p>
-            
-          Class Dates: 
-          <ul>
-            <li>June 14</li>
-            <li>July 19</li>
-            <li>August 16</li>
-          </ul>
+        <img src="assets/img/qcz_logo.png" alt="Logo" class="img-fluid" style="border:none;width:40%;z-index:99;">
+        </div>
+        <br>
 
-          <div class="row">
-            <div class="col-md-6">something here</div>
-            <div class="col-md-6">
+        <p>Join us in our 3-class mini session at LilyPad! Zumbini classes will be held once per month during the summer months using the wonderful music of our TJ &amp; His PJs volume! Sing, dance, and play instruments with your child and then stay to play on LilyPad's awesome indoor equipment. Included with your session registration is the digital download of all of the music used in class, so you can keep the party going at home or on the road!</p>
 
-                <script data-sdk-integration-source="integrationbuilder_ac"></script>
-                <div id="paypal-button-container"></div>
-                <script src="https://www.paypal.com/sdk/js?client-id=Af5jKXZ417ucIuCmaiK0l47zT-BMBPNIfYrCyd_G6JTfcS_0XXnZbE1CwF7FTLYabWLx2r_P8xQNh6bs"></script>
-                <script>
-                const FUNDING_SOURCES = [
-                    paypal.FUNDING.PAYPAL,
-                    paypal.FUNDING.PAYLATER,
-                    paypal.FUNDING.VENMO,
-                    paypal.FUNDING.CARD
-                ];
-                FUNDING_SOURCES.forEach(fundingSource => {
-                    paypal.Buttons({
-                    fundingSource,
-                    style: {
-                        layout: 'vertical',
-                        shape: 'rect',
-                        color: (fundingSource==paypal.FUNDING.PAYLATER) ? 'gold' : '',
-                    },
-                    createOrder: async (data, actions) => {
-                        const response = await fetch("/orders", {
-                        method: "POST",
-                        });
-                        const details = await response.json();
-                        return details.id;
-                    },
-                    
-                    onApprove: async (data, actions) => {
-                        const response = await fetch(`/orders/${data.orderID}/capture`, {
-                        method: "POST",
-                        });
-                        const details = await response.json();
-                        // Three cases to handle:
-                        //   (1) Recoverable INSTRUMENT_DECLINED -> call actions.restart()
-                        //   (2) Other non-recoverable errors -> Show a failure message
-                        //   (3) Successful transaction -> Show confirmation or thank you
+        <p>Classes will be held on Wednesdays at 10:00 am. Please arrive a few minutes early to get signed in.</p>
 
-                        // This example reads a v2/checkout/orders capture response, propagated from the server
-                        // You could use a different API or structure for your 'orderData'
+        Class Dates:
+        <ul>
+        <li>June 14</li>
+        <li>July 19</li>
+        <li>August 16</li>
+        </ul>
 
-                        const errorDetail = Array.isArray(details.details) && details.details[0];
-                        if (errorDetail && errorDetail.issue === 'INSTRUMENT_DECLINED') {
-                        return actions.restart(); // Recoverable state, per:
-                        // https://developer.paypal.com/docs/checkout/integration-features/funding-failure/
-                        }
+        <div class="row">
+        <div class="col-md-6">something here</div>
+        <div class="col-md-6">
 
-                        if (errorDetail) {
-                        let msg = 'Sorry, your transaction could not be processed.';
-                        if (errorDetail.description) msg += '\n\n' + errorDetail.description;
-                        if (details.debug_id) msg += ' (' + details.debug_id + ')';
-                        return alert(msg); // Show a failure message (try to avoid alerts in production environments)
-                        }
+            <script data-sdk-integration-source="integrationbuilder_ac"></script>
+            <div id="paypal-button-container"></div>
+            <script src="https://www.paypal.com/sdk/js?client-id=Af5jKXZ417ucIuCmaiK0l47zT-BMBPNIfYrCyd_G6JTfcS_0XXnZbE1CwF7FTLYabWLx2r_P8xQNh6bs"></script>
+            <script>
+            const FUNDING_SOURCES = [
+                paypal.FUNDING.PAYPAL,
+                paypal.FUNDING.PAYLATER,
+                paypal.FUNDING.VENMO,
+                paypal.FUNDING.CARD
+            ];
+            FUNDING_SOURCES.forEach(fundingSource => {
+                paypal.Buttons({
+                fundingSource,
+                style: {
+                    layout: 'vertical',
+                    shape: 'rect',
+                    color: (fundingSource==paypal.FUNDING.PAYLATER) ? 'gold' : '',
+                },
+                createOrder: async (data, actions) => {
+                    const response = await fetch("/orders", {
+                    method: "POST",
+                    });
+                    const details = await response.json();
+                    return details.id;
+                },
+                
+                onApprove: async (data, actions) => {
+                    const response = await fetch(`/orders/${data.orderID}/capture`, {
+                    method: "POST",
+                    });
+                    const details = await response.json();
+                    // Three cases to handle:
+                    //   (1) Recoverable INSTRUMENT_DECLINED -> call actions.restart()
+                    //   (2) Other non-recoverable errors -> Show a failure message
+                    //   (3) Successful transaction -> Show confirmation or thank you
 
-                        // Successful capture! For demo purposes:
-                        console.log('Capture result', details, JSON.stringify(details, null, 2));
-                        const transaction = details.purchase_units[0].payments.captures[0];
-                        alert('Transaction '+ transaction.status + ': ' + transaction.id + '\n\nSee console for all available details');
-                    },
-                    })
-                    .render("#paypal-button-container");
+                    // This example reads a v2/checkout/orders capture response, propagated from the server
+                    // You could use a different API or structure for your 'orderData'
+
+                    const errorDetail = Array.isArray(details.details) && details.details[0];
+                    if (errorDetail && errorDetail.issue === 'INSTRUMENT_DECLINED') {
+                    return actions.restart(); // Recoverable state, per:
+                    // https://developer.paypal.com/docs/checkout/integration-features/funding-failure/
+                    }
+
+                    if (errorDetail) {
+                    let msg = 'Sorry, your transaction could not be processed.';
+                    if (errorDetail.description) msg += '\n\n' + errorDetail.description;
+                    if (details.debug_id) msg += ' (' + details.debug_id + ')';
+                    return alert(msg); // Show a failure message (try to avoid alerts in production environments)
+                    }
+
+                    // Successful capture! For demo purposes:
+                    console.log('Capture result', details, JSON.stringify(details, null, 2));
+                    const transaction = details.purchase_units[0].payments.captures[0];
+                    alert('Transaction '+ transaction.status + ': ' + transaction.id + '\n\nSee console for all available details');
+                },
                 })
+                .render("#paypal-button-container");
+            })
 
-                </script>
-            </div>
+            </script>
         </div>
     </div>
     <br><br><br>
+    </div>
+</section>
 </main><!-- End #main -->
 
 <!-- ======= Footer ======= -->
@@ -203,4 +204,5 @@ $(function () {
 });
 </script>
 </body>
+</html>
       
