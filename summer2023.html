@@ -157,19 +157,19 @@
             </div>
           </div>
           <div class="row" style="text-align: center">
-            <div class="col-md-3 offset-1" style="border: 1px solid black">
+            <div class="col-md-3 offset-md-1" style="border: 1px solid black">
               <br />
               Hyde Park / O'Bryonville<br /><br />
               Wendesday, June 14th<br /><br />
               10:00 am<br /><br />
             </div>
-            <div class="col-md-3 offset-1" style="border: 1px solid black">
+            <div class="col-md-3 offset-md-1" style="border: 1px solid black">
               <br />
               Hyde Park / O'Bryonville<br /><br />
               Wendesday, July 19th<br /><br />
               10:00 am<br /><br />
             </div>
-            <div class="col-md-3 offset-1" style="border: 1px solid black">
+            <div class="col-md-3 offset-md-1" style="border: 1px solid black">
               <br />
               Hyde Park / O'Bryonville<br /><br />
               Wendesday, August 24th<br /><br />
@@ -202,8 +202,6 @@
                       name="name"
                       class="form-control"
                       id="name"
-                      data-rule="minlen:4"
-                      data-msg="Please enter at least 4 chars"
                       required
                     />
                     <div class="validate"></div>
@@ -217,8 +215,6 @@
                   name="kidname"
                   class="form-control"
                   id="kidname"
-                  data-rule="minlen:4"
-                  data-msg="Please enter at least 4 chars"
                   required
                 />
                 <div class="validate"></div>
@@ -232,8 +228,6 @@
                 name="kidage"
                 class="form-control"
                 id="kidage"
-                data-rule="minlen:1"
-                data-msg="Please enter at least 1 chars"
                 required
               />
               <div class="validate"></div>
@@ -247,8 +241,6 @@
                   name="relationship"
                   class="form-control"
                   id="relationship"
-                  data-rule="minlen:4"
-                  data-msg="Please enter at least 4 chars"
                   required
                 />
                 <div class="validate"></div>
@@ -262,6 +254,7 @@
                   class="form-control"
                   name="phone"
                   id="phone"
+                  required
                 />
               </div>
             </div>
@@ -273,17 +266,15 @@
                   class="form-control"
                   name="_replyto"
                   id="email"
-                  data-rule="email"
-                  data-msg="Please enter a valid email"
                   required
                 />
                 <div class="validate"></div>
               </div>
             </div>
                 <div class="mb-3">
-                  <div class="loading">Loading</div>
+                  <div class="loading" style="display:none;">Loading</div>
                   <div class="error-message"></div>
-                  <div class="sent-message">
+                  <div class="sent-message" style="display:none;">
                     Your message has been sent. Thank you!
                   </div>
                 </div>
@@ -296,6 +287,7 @@
             </div>
             <div
               class="col-lg-6 align-items-stretch"
+              style="margin-bottom:200px;"
             >
               <br />
               <h2>Step #2 Pay</h2>
@@ -308,10 +300,10 @@
                 <br />
                 <h3>Pay via one of the following:</h3>
                 <br />
-                <a href="#" class="btn btn-block btn-secondary" style="padding:20px;font-size:200%;">Venmo</a></h2>
+                <a href="https://venmo.com/u/DMHill" target="_blank" class="btn btn-block btn-secondary" style="padding:20px;font-size:200%;">Venmo @DMHill</a></h2>
 
                 <br /><br />
-                <a href="#" class="btn btn-block btn-secondary" style="padding:20px;font-size:200%;">Paypal</a></h2>
+                <a href="https://paypal.me/queencityzbini?country.x=US&locale.x=en_US" target="_blank" class="btn btn-block btn-secondary" style="padding:20px;font-size:200%;">Paypal</a></h2>
               </p>
             </div>
           </div>
@@ -347,21 +339,21 @@
         });
       });
     </script>
-      <script>
-        function checkBeforeSubmit() {
-          var name = document.getElementById("name").value;
-          var kidname = document.getElementById("kidname").value;
-          var kidage = document.getElementById("kidage").value;
-          var relationship = document.getElementById("relationship").value;
-          var phone = document.getElementById("phone").value;
-          var email = document.getElementById("email").value;
-          if (name && email && kidname && kidage && relationship && phone) {
-            $('.sent-message').show();
-            return true;
-          } else {
-            alert("Please fill out all fields");
-          }
+    <script>
+      function checkBeforeSubmit() {
+        var name = document.getElementById("name").value;
+        var kidname = document.getElementById("kidname").value;
+        var kidage = document.getElementById("kidage").value;
+        var relationship = document.getElementById("relationship").value;
+        var phone = document.getElementById("phone").value;
+        var email = document.getElementById("email").value;
+        if (name && email && kidname && kidage && relationship && phone) {
+          $('.sent-message').show();
+          return true;
+        } else {
+          alert("Please fill out all fields");
         }
-      </script>
+      }
+    </script>
   </body>
 </html>
