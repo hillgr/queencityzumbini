@@ -1,675 +1,1070 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-  <title>Queen City Zumbini</title>
-  <meta content="Cincinnati's First Zumbini Classes" name="descriptison">
-  <meta content="Queen City Zumbini" name="keywords">
+    <title>Queen City Zumbini</title>
+    <meta content="Cincinnati's First Zumbini Classes" name="descriptison" />
+    <meta content="Queen City Zumbini" name="keywords" />
 
-  <!-- Favicons -->
-  <!--<link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">-->
+    <!-- Favicons -->
+    <!--<link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">-->
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
-  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet" />
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="assets/vendor/venobox/venobox.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/owl.carousel/assets/owl.carousel.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-  <style>
-    .description {
-      margin-top:8px;
-    }
-    .fixed-top.scrolled {
-      background-color: white !important; /*#173b6c*/
-      transition: background-color 200ms linear;
-    }
-    .navbar-brand {
-      visibility:hidden;
-    }
-    .navbar-brand.scrolled {
-      visibility:visible;
-    }
-    .nav-item {
-      margin-right:30px;
-    }
-    #inperson-tab {
-      outline: 1px solid grey;
-    }
-    #virtual-tab {
-      outline: 1px solid grey;
-    }
-  </style>
-</head>
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <style>
+      .description {
+        margin-top: 8px;
+      }
+      .fixed-top.scrolled {
+        background-color: white !important; /*#173b6c*/
+        transition: background-color 200ms linear;
+      }
+      .navbar-brand {
+        visibility: hidden;
+      }
+      .navbar-brand.scrolled {
+        visibility: visible;
+      }
+      .nav-item {
+        margin-right: 30px;
+      }
+      #inperson-tab {
+        outline: 1px solid grey;
+      }
+      #virtual-tab {
+        outline: 1px solid grey;
+      }
+    </style>
+  </head>
 
-<body>
-
-  <!-- ======= Header ======= -->
-  <header id="header">
-  <nav class="navbar navbar-expand-md navbar-light fixed-top">
-    <a class="navbar-brand" href="#hero" style="background:white;padding-left:5px;padding-right:5px;">
-      <img src="assets/img/zumbini_logo.png" alt="Logo" class="img-fluid" style="border:none;width:110px;">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse nav-menu" id="navbarCollapse">
-      <div class="mobile-margin d-lg-up" style="margin-left:-110px;">&nbsp;</div>
-      <ul class="navbar-nav ml-auto mr-auto text-center">
-        <!--<li class="nav-item active">
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header">
+      <nav class="navbar navbar-expand-md navbar-light fixed-top">
+        <a
+          class="navbar-brand"
+          href="#hero"
+          style="background: white; padding-left: 5px; padding-right: 5px"
+        >
+          <img
+            src="assets/img/zumbini_logo.png"
+            alt="Logo"
+            class="img-fluid"
+            style="border: none; width: 110px"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarCollapse"
+          aria-controls="navbarCollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse nav-menu" id="navbarCollapse">
+          <div class="mobile-margin d-lg-up" style="margin-left: -110px">
+            &nbsp;
+          </div>
+          <ul class="navbar-nav ml-auto mr-auto text-center">
+            <!--<li class="nav-item active">
           <a class="nav-link active" href="#hero">Home <span class="sr-only">(current)</span></a>
         </li>-->
-        <li class="nav-item"><a href="#hero" class="nav-link"><i class="bx bx-home"></i> <span>Home</span></a></li>
-        <li class="nav-item"><a href="#upcoming" class="nav-link"><i class="bx bx-calendar"></i> <span>Zumbini Schedule</span></a></li>
-        <li class="nav-item"><a href="#kanga" class="nav-link"><i class="bx bx-calendar"></i> <span>Kanga Moves Schedule</span></a></li>
-        <li class="nav-item"><a href="#bring" class="nav-link"><i class="bx bxs-car"></i> <span>Bring Zumbini to You</span></a></li>
-        <li class="nav-item"><a href="#about" class="nav-link"><i class="bx bxs-info-circle"></i> <span>What is Zumbini</span></a></li>
-        <!--<li class="nav-item"><a href="#resume" class="nav-link"><i class="bx bx-file-blank"></i> <span>About</span></a></li>
-        <li class="nav-item"><a href="#resume" class="nav-link"><i class="bx bx-file-blank"></i> <span>Photos</span></a></li>-->
-        <li class="nav-item"><a href="#contact" class="nav-link"><i class="bx bx-envelope"></i> Contact Us</a></li>
-      </ul>
-    </div>
-  </nav>
-</header><!-- End Header -->
+            <li class="nav-item">
+              <a href="#hero" class="nav-link"
+                ><i class="bx bx-home"></i> <span>Home</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#upcoming" class="nav-link"
+                ><i class="bx bx-calendar"></i> <span>Zumbini Schedule</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#kanga" class="nav-link"
+                ><i class="bx bx-calendar"></i>
+                <span>Kanga Moves Schedule</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#bring" class="nav-link"
+                ><i class="bx bxs-car"></i> <span>Bring Zumbini to You</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#about" class="nav-link"
+                ><i class="bx bxs-info-circle"></i>
+                <span>What is Zumbini</span></a
+              >
+            </li>
+            <!--<li class="nav-item"><a href="#resume" class="nav-link"><i class="bx bx-file-blank"></i> <span>About</span></a></li>
+            <li class="nav-item"><a href="#resume" class="nav-link"><i class="bx bx-file-blank"></i> <span>Photos</span></a></li>-->
+            <li class="nav-item">
+              <a href="#contact" class="nav-link"
+                ><i class="bx bx-envelope"></i> Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!-- End Header -->
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center" style="padding-top:5%;">
-    <div class="layer"></div>
-    <div class="hero-container" data-aos="fade-in" style="text-align:center;">
-      <img src="assets/img/qcz_logo.png" alt="Logo" class="img-fluid" style="border:none;width:40%;z-index:99;">
-      <!--<p>Always on-<span class="typed" data-typed-items="schedule, budget, point, top"></span></p>-->
-      <h4 style="color:white;margin-top:25px;">Come be a part of Cincinnati’s FIRST Zumbini Classes!​</h4>
-    </div>
-  </section><!-- End Hero -->
+    <!-- ======= Hero Section ======= -->
+    <section
+      id="hero"
+      class="d-flex flex-column justify-content-center align-items-center"
+      style="padding-top: 5%"
+    >
+      <div class="layer"></div>
+      <div class="hero-container" data-aos="fade-in" style="text-align: center">
+        <img
+          src="assets/img/qcz_logo.png"
+          alt="Logo"
+          class="img-fluid"
+          style="border: none; width: 40%; z-index: 99"
+        />
+        <!--<p>Always on-<span class="typed" data-typed-items="schedule, budget, point, top"></span></p>-->
+        <h4 style="color: white; margin-top: 25px">
+          Come be a part of Cincinnati’s FIRST Zumbini Classes!​
+        </h4>
+      </div>
+    </section>
+    <!-- End Hero -->
 
-  <main id="main">
-    <!-- ======= Upcoming Classes Section ======= -->
-    <section id="upcoming" class="about" style="padding-top:10px;">
-      <div class="container">
-        <div class="section-title">
-          <div class="row">
-            <div class="col-md-12">
-              <h2 style="margin-top:20px;display:none;text-align:center;">Upcoming Classes</h2>
-              <img src="assets/img/upcoming_classes.jpg" alt="Upcoming Classes" style="width:100%;">
-              <br><br>
-              <p>Sing, dance, and play music with us! Join us in a 6-week session and get the  accompanying music bundle as part of your class package. At any of the play cafes you will get a play pass to use during each day that you attend a Zumbini class! We will also offer drop-ins at several locations around the city, but space will be limited. Find a class that works best for you below.</p>
-              <br>
+    <main id="main">
+      <!-- ======= Upcoming Classes Section ======= -->
+      <section id="upcoming" class="about" style="padding-top: 10px">
+        <div class="container">
+          <div class="section-title">
+            <div class="row">
+              <div class="col-md-12">
+                <h2 style="margin-top: 20px; display: none; text-align: center">
+                  Upcoming Classes
+                </h2>
+                <img
+                  src="assets/img/upcoming_classes.jpg"
+                  alt="Upcoming Classes"
+                  style="width: 100%"
+                />
+                <br /><br />
+                <p>
+                  Sing, dance, and play music with us! Join us in a 6-week
+                  session and get the accompanying music bundle as part of your
+                  class package. At any of the play cafes you will get a play
+                  pass to use during each day that you attend a Zumbini class!
+                  We will also offer drop-ins at several locations around the
+                  city, but space will be limited. Find a class that works best
+                  for you below.
+                </p>
+                <br />
+              </div>
+            </div>
+            <hr />
+            <div class="tab-content" id="pills-tabContent">
+              <div
+                class="tab-pane fade show active"
+                id="inperson"
+                role="tabpanel"
+                aria-labelledby="inperson-tab"
+              >
+                <div class="row">
+                  <div
+                    class="col-md-12"
+                    style="text-align: center; margin-bottom: 20px"
+                  >
+                    <h4 style="text-align: center">6-Week Sessions:</h4>
+                    <!-- <img src="assets/img/fall_session.png" style="width:60%;" alt="fall session calendar image"> -->
+                    <!-- <p>December Holidays & Winter-Themed Class!</p> -->
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <a
+                      href="https://www.zumbini.com/en/classes/17797"
+                      target="_blank"
+                      class="btn btn-block btn-secondary"
+                      style="margin-right: 10%; margin-bottom: 20px"
+                    >
+                      <span style="font-weight: bold; font-size: 110%"
+                        >6 Week Session</span
+                      ><br />
+                      LilyPad Crescent Springs (KY)<br />
+                      Tuesdays<br />
+                      9:15 - 10:00 am<br />
+                      April 2 - May 7<br />
+                      <span style="font-weight: bold; font-size: 110%"
+                        >$95 (Includes Digital Music)</span
+                      ><br />
+                    </a>
+                  </div>
+                  <div class="col-md-4">
+                    <a
+                      href="https://www.zumbini.com/en/classes/17799"
+                      target="_blank"
+                      class="btn btn-block btn-secondary"
+                      style="margin-right: 10%; margin-bottom: 20px"
+                    >
+                      <span style="font-weight: bold; font-size: 110%"
+                        >6 Week Session</span
+                      ><br />
+                      Magic Land (Harrison, OH)<br />
+                      Tuesdays<br />
+                      11:00 - 11:45 am<br />
+                      April 2 - May 7<br />
+                      <span style="font-weight: bold; font-size: 110%"
+                        >$95 (Includes Digital Music)</span
+                      ><br />
+                    </a>
+                  </div>
+                  <div class="col-md-4">
+                    <a
+                      href="https://www.zumbini.com/en/classes/17798"
+                      target="_blank"
+                      class="btn btn-block btn-secondary"
+                      style="margin-right: 10%; margin-bottom: 20px"
+                    >
+                      <span style="font-weight: bold; font-size: 110%"
+                        >6 Week Session</span
+                      ><br />
+                      LilyPad - Cincinnati<br />
+                      Wednesdays<br />
+                      9:15 - 10:00 am<br />
+                      April 3 - May 8<br />
+                      <span style="font-weight: bold; font-size: 110%"
+                        >$95 (Includes Digital Music)</span
+                      ><br />
+                    </a>
+                  </div>
+                </div>
+                <hr />
+                <div class="row">
+                  <div
+                    class="col-md-12"
+                    style="text-align: center; margin-bottom: 20px"
+                  >
+                    <h4 style="text-align: center">Single Classes:</h4>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <a
+                      href="https://www.zumbini.com/en/demo-classes/27275"
+                      target="_blank"
+                      class="btn btn-block btn-secondary"
+                      style="margin-right: 10%; margin-bottom: 20px"
+                    >
+                      <span style="font-weight: bold; font-size: 110%"
+                        >Single Class</span
+                      ><br />
+                      LilyPad - Crescent Springs<br />
+                      Tuesday 4/2<br />
+                      9:15 am<br />
+                      <span style="font-weight: bold; font-size: 110%"
+                        >$15 (includes play pass)</span
+                      ><br />
+                    </a>
+                  </div>
+                  <div class="col-md-4">
+                    <a
+                      href="https://www.zumbini.com/en/demo-classes/27276"
+                      target="_blank"
+                      class="btn btn-block btn-secondary"
+                      style="margin-right: 10%; margin-bottom: 20px"
+                    >
+                      <span style="font-weight: bold; font-size: 110%"
+                        >Single Class</span
+                      ><br />
+                      Magic Land - Harrison<br />
+                      Tuesday 4/2<br />
+                      11:00 am<br />
+                      <span style="font-weight: bold; font-size: 110%"
+                        >$15 (includes play pass)</span
+                      ><br />
+                    </a>
+                  </div>
+                  <div class="col-md-4">
+                    <a
+                      href="https://www.zumbini.com/en/demo-classes/27277"
+                      target="_blank"
+                      class="btn btn-block btn-secondary"
+                      style="margin-right: 10%; margin-bottom: 20px"
+                    >
+                      <span style="font-weight: bold; font-size: 110%"
+                        >Single Class</span
+                      ><br />
+                      LilyPad - Cincinnati<br />
+                      Wednesday 4/3<br />
+                      9:15 am<br />
+                      <span style="font-weight: bold; font-size: 110%"
+                        >$15 (includes play pass)</span
+                      ><br />
+                    </a>
+                  </div>
+                  <div class="col-md-4">
+                    <a
+                      href="https://www.zumbini.com/en/demo-classes/27274"
+                      target="_blank"
+                      class="btn btn-block btn-secondary"
+                      style="margin-right: 10%; margin-bottom: 20px"
+                    >
+                      <span style="font-weight: bold; font-size: 110%"
+                        >Single Class</span
+                      ><br />
+                      The Village - Lawrenceburg<br />
+                      Thursday 4/18<br />
+                      10:30 am<br />
+                      <span style="font-weight: bold; font-size: 110%">$12</span
+                      ><br />
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <hr>
-          <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="inperson" role="tabpanel" aria-labelledby="inperson-tab">
-              <div class="row">
-                <div class="col-md-12" style="text-align: center; margin-bottom: 20px;">
-                  <h4 style="text-align:center;">6-Week Sessions:</h4>
-                  <!-- <img src="assets/img/fall_session.png" style="width:60%;" alt="fall session calendar image"> -->
-                  <!-- <p>December Holidays & Winter-Themed Class!</p> -->
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-4">
-                  <a href="https://www.zumbini.com/en/classes/17797" target="_blank" class="btn btn-block btn-secondary" style="margin-right:10%;margin-bottom:20px">
-                    <span style="font-weight:bold;font-size:110%;">6 Week Session</span><br>
-                    LilyPad Crescent Springs (KY)<br>
-                    Tuesdays<br>
-                    9:15 - 10:00 am<br>
-                    April 2 - May 7<br>
-                    <span style="font-weight:bold;font-size:110%;">$95 (Includes Digital Music)</span><br>
-                  </a>
-                </div>
-                <div class="col-md-4">
-                  <a href="https://www.zumbini.com/en/classes/17799" target="_blank" class="btn btn-block btn-secondary" style="margin-right:10%;margin-bottom:20px">
-                    <span style="font-weight:bold;font-size:110%;">6 Week Session</span><br>
-                    Magic Land (Harrison, OH)<br>
-                    Tuesdays<br>
-                    11:00 - 11:45 am<br>
-                    April 2 - May 7<br>
-                    <span style="font-weight:bold;font-size:110%;">$95 (Includes Digital Music)</span><br>
-                  </a>
-                </div>
-                <div class="col-md-4">
-                  <a href="https://www.zumbini.com/en/classes/17798" target="_blank" class="btn btn-block btn-secondary" style="margin-right:10%;margin-bottom:20px">
-                    <span style="font-weight:bold;font-size:110%;">6 Week Session</span><br>
-                    LilyPad - Cincinnati<br>
-                    Wednesdays<br>
-                    9:15 - 10:00 am<br>
-                    April 3 - May 8<br>
-                    <span style="font-weight:bold;font-size:110%;">$95 (Includes Digital Music)</span><br>
-                  </a>
-                </div>
-              </div>
-              <hr/>
-              <div class="row">
-                <div class="col-md-12" style="text-align: center; margin-bottom: 20px;">
-                  <h4 style="text-align:center;">Single Classes:</h4>
-                </div>
-              </div>
-              <div class="row">
-                <!--<div class="col-md-4">
-                  <a href="https://www.hisawyer.com/lily-pad/schedules/activity-set/597021" target="_blank" class="btn btn-block btn-secondary" style="margin-right:10%;margin-bottom:20px">
-                    <span style="font-weight:bold;font-size:110%;">Single Class</span><br>
-                    LilyPad Crescent Springs (KY)<br>
-                    Tuesday 2/13<br>
-                    9:15 am<br>
-                    <span style="font-weight:bold;font-size:110%;">$15 (includes play pass)</span><br>
-                  </a>
-                </div>
-                <div class="col-md-4">
-                  <a href="https://www.zumbini.com/en/demo-classes/26877" target="_blank" class="btn btn-block btn-secondary" style="margin-right:10%;margin-bottom:20px">
-                    <span style="font-weight:bold;font-size:110%;">Single Class</span><br>
-                    Magic Land (Harrison, OH)<br>
-                    Tuesday 2/13<br>
-                    11:00 am<br>
-                    <span style="font-weight:bold;font-size:110%;">$15 (includes play pass)</span><br>
-                  </a>
-                </div>
-                <div class="col-md-4">
-                  <a href="https://www.hisawyer.com/lily-pad/schedules/activity-set/597022" target="_blank" class="btn btn-block btn-secondary" style="margin-right:10%;margin-bottom:20px">
-                    <span style="font-weight:bold;font-size:110%;">Single Class</span><br>
-                    LilyPad - Cincinnati<br>
-                    Wednesday 2/14<br>
-                    9:15 am<br>
-                    <span style="font-weight:bold;font-size:110%;">$15 (includes play pass)</span><br>
-                  </a>
-                </div>
-                <div class="col-md-4">
-                  <a href="https://www.zumbini.com/en/demo-classes/26878" target="_blank" class="btn btn-block btn-secondary" style="margin-right:10%;margin-bottom:20px">
-                    <span style="font-weight:bold;font-size:110%;">Single Class</span><br>
-                    Magic Land (Harrison, OH)<br>
-                    Tuesday 2/20<br>
-                    11:00 am<br>
-                    <span style="font-weight:bold;font-size:110%;">$15 (includes play pass)</span><br>
-                  </a>
-                </div>-->
-                <div class="col-md-4">
-                  <a href="https://www.zumbini.com/en/demo-classes/27275" target="_blank" class="btn btn-block btn-secondary" style="margin-right:10%;margin-bottom:20px">
-                    <span style="font-weight:bold;font-size:110%;">Single Class</span><br>
-                    LilyPad - Crescent Springs<br>
-                    Tuesday 4/2<br>
-                    9:15 am<br>
-                    <span style="font-weight:bold;font-size:110%;">$15 (includes play pass)</span><br>
-                  </a>
-                </div>
-                <div class="col-md-4">
-                  <a href="https://www.zumbini.com/en/demo-classes/27276" target="_blank" class="btn btn-block btn-secondary" style="margin-right:10%;margin-bottom:20px">
-                    <span style="font-weight:bold;font-size:110%;">Single Class</span><br>
-                    Magic Land - Harrison<br>
-                    Tuesday 4/2<br>
-                    11:00 am<br>
-                    <span style="font-weight:bold;font-size:110%;">$15 (includes play pass)</span><br>
-                  </a>
-                </div>
-                <div class="col-md-4">
-                  <a href="https://www.zumbini.com/en/demo-classes/27277" target="_blank" class="btn btn-block btn-secondary" style="margin-right:10%;margin-bottom:20px">
-                    <span style="font-weight:bold;font-size:110%;">Single Class</span><br>
-                    LilyPad - Cincinnati<br>
-                    Wednesday 4/3<br>
-                    9:15 am<br>
-                    <span style="font-weight:bold;font-size:110%;">$15 (includes play pass)</span><br>
-                  </a>
-                </div>
-                <div class="col-md-4">
-                  <a href="https://www.zumbini.com/en/demo-classes/27274" target="_blank" class="btn btn-block btn-secondary" style="margin-right:10%;margin-bottom:20px">
-                    <span style="font-weight:bold;font-size:110%;">Single Class</span><br>
-                    The Village - Lawrenceburg<br>
-                    Thursday 4/18<br>
-                    10:30 am<br>
-                    <span style="font-weight:bold;font-size:110%;">$12</span><br>
-                  </a>
-                </div>
-              </div>
-              </div>
-              <!--<hr>
-              <div class="row">
-                <div class="col-md-12" style="text-align: center; margin-bottom: 20px;">
-                  <h4 style="text-align:center;">Sunday Classes at Rockwern Academy:</h4>
-                  <img src="assets/img/rockwern.png" style="width:60%;" alt="fall session calendar image">
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-sm-12" style="margin-bottom: 20px;">
-                  <p>Rockwern Academy will be hosting Zumbini Classes as a part of their Sundays Rock Program! Every other month you will find us singing and dancing to your favorite Zumbini tunes! These classes are FREE as a part of their community outreach program.</p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-sm-6 col-md-4" style="margin-bottom: 20px;">
-                  <p><b>Location:</b><br>
-                    Rockwern Academy (Gymnasium)<br>
-                    8401 Montgomery Rd<br>
-                    Cincinnati, OH 45236<br>
-                  </p>
-                </div>
-                <div class="col-sm-6 col-md-4" style="margin-bottom: 20px;">
-                  <p><b>Sunday Dates:</b><br>
-                    November 19 at 9:30 AM<br>
-                    January 21 at 9:30 AM<br>
-                    March 10 at 9:30 AM
-                  </p>
-                </div>
-                <div class="col-sm-12 col-md-4">
-                  <a href="https://form.jotform.com/231905336456155" target="_blank" class="btn btn-block btn-secondary" style="margin-right:10%;margin-bottom:20px">
-                    <span style="font-weight:bold;font-size:110%;">Click for Pre-registration<br>REQUIRED</span><br>
-                  </a>
-                </div>
-              </div>
-              <span style="font-weight:bold;font-size:110%;">For more information, go to <a href="https://www.rockwernacademy.org/sundaysrock" target="_blank">www.rockwernacademy.org/sundaysrock</a></span><br>-->
-            </div>
-          </div>
-          <hr>
-          <br>
+          <hr />
+          <br />
           <div class="row">
             <div class="col-md-12">
-              <h4 style="text-align:center;">Optional Add-Ons:</h4>
+              <h4 style="text-align: center">Optional Add-Ons:</h4>
             </div>
           </div>
           <div class="row">
             <div class="col-md-5 offset-md-3">
-              <br><br>
-              <a href="https://shop.zumbini.com/instruments/26-instructor-instrument-bundle.html" target="_blank">
-                Add an Instrument Bundle<br>
+              <br /><br />
+              <a
+                href="https://shop.zumbini.com/instruments/26-instructor-instrument-bundle.html"
+                target="_blank"
+              >
+                Add an Instrument Bundle<br />
                 (bongos, 1 set of shakers, 1 set of rhythm sticks)
               </a>
             </div>
             <div class="col-md-2">
-              <a href="https://shop.zumbini.com/instruments/26-instructor-instrument-bundle.html"><img src="assets/img/instrument_bundle.jpg" style="width:100%;"></a>
+              <a
+                href="https://shop.zumbini.com/instruments/26-instructor-instrument-bundle.html"
+                ><img
+                  src="assets/img/instrument_bundle.jpg"
+                  style="width: 100%"
+              /></a>
             </div>
           </div>
-          <hr/>
-          <br/>
+          <hr />
+          <br />
           <div class="row">
             <div class="col-md-6 offset-md-2">
-              <br><br>
-              Exchange the Music Download for Zumbini Music Bundle.<br/><br/>
-              Includes: Song & storybook, digital download of all the music used in the session, and a plush toy!<br/><br/>
-              <a href="#contact">Contact us</a> if you would like the full bundle instead of the digital music download. Cost: $15<br/><br/>
+              <br /><br />
+              Exchange the Music Download for Zumbini Music Bundle.<br /><br />
+              Includes: Song & storybook, digital download of all the music used
+              in the session, and a plush toy!<br /><br />
+              <a href="#contact">Contact us</a> if you would like the full
+              bundle instead of the digital music download. Cost: $15<br /><br />
             </div>
             <div class="col-md-2">
-              <img src="assets/img/kalino_bundle.jpg" style="width:100%;">
+              <img src="assets/img/kalino_bundle.jpg" style="width: 100%" />
             </div>
           </div>
-           
-          <br>
-          <!--<div class="row">
-            <div class="col-md-12" style="text-align:center;">
-              Please <a href="#contact">email us</a> if you would like to purchase any of these in addition to your session
-            </div>
-          </div>-->
-
-          <!--FITMOM 513-->
-          <!--<div class="row">
-            <div class="col-md-12" style="text-align:center;">
-              <h4 style="text-align:center;">New Zumbini + Fit Mom 513 Teamup</h4>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6" style="text-align:center;">
-              <a href="https://www.facebook.com/events/2894144204194306/" target="_blank" rel="noopener nofollow"><img src="assets/img/fitmom513.png" style="width:75%;margin-top:20px;"/></a>
-            </div>
-            <div class="col-md-6">
-              <br>
-              <br>
-              <br>
-              We're teaming up with Fit Mom 513 for a fun Cinco De Mayo double class! Get a nice sweat session in with their Stroller Bootcamp and then stay around after for a 30 minute Zumbini class! Both classes are designed to be enjoyed with your child ❤️
-              This outdoor class will be held in Mason at Pine Hills Lake Park. Stroller Bootcamp begins at noon, followed by Zumbini. 
-              Class is $10, Zumbini is included with it for FREE! For more information and to register go to <a href="https://www.facebook.com/events/2894144204194306/" target="_blank" rel="noopener nofollow">https://www.facebook.com/events/2894144204194306/</a>
-            </div>
-
-          </div>-->
+          <br />
         </div>
-      </div>
-    </section><!-- End Zumbini Schedule -->
+      </section>
 
-    <section id="kanga" class="about d-flex flex-column justify-content-center align-items-center" style="padding-top:5%;">
-      <div class="container">
-        <div class="section-title" style="text-align:center;">
-          <h2 style="margin-top:20px;display:none;">Upcoming Classes</h2>
-          <img src="assets/img/kanga_moves_banner.png" alt="Kanga Moves Upcoming Classes" style="width:100%;">
-          <span style="text-align:left;">
-          <br><br>
-          <p>KangaMoves classes are baby-wearing dance & fitness classes for caregivers and their babies. Wear your child in your favorite carrier and get ready to groove to some fun, familiar tunes for a 30-minute class that was made for you, but with your child in mind. Babies love the feeling of being close to you and enjoying rhythmic movement. This class gives you time to focus on YOU, but also a chance for some wonderful bonding time with your little one.</p>
-          <br>
-          <p>You do not have to have prior dance experience to enjoy this class. The safety of your child is of the utmost importance and safety protocols are followed in class. You must have postnatal clearance from your doctor to participate in this class.</p>
-          <br>
-          </span>
-          <h3>Upcoming KangaMoves Classes:</h3>
-          <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> -->
-          <div class="row">
-            <div class="col-md-4">
-              <a href="https://www.hisawyer.com/lily-pad/schedules/activity-set/624914" target="_blank" class="btn btn-block btn-primary">
-                LilyPad Cincinnati<br/>
-                Wednesday, April 10<br/>
-                10:15 am<br/>
-                $15 (includes play pass)
-              </a>
-            </div>
-            <div class="col-md-4">
-              <a href="https://www.hisawyer.com/lily-pad/schedules/activity-set/624914" target="_blank" class="btn btn-block btn-primary">
-                LilyPad Cincinnati<br/>
-                Wednesday, April 24<br/>
-                10:15 am<br/>
-                $15 (includes play pass)
-              </a>
-              </div>
+      <section
+        id="kanga"
+        class="about d-flex flex-column justify-content-center align-items-center"
+        style="padding-top: 5%"
+      >
+        <div class="container">
+          <div class="section-title" style="text-align: center">
+            <h2 style="margin-top: 20px; display: none">Upcoming Classes</h2>
+            <img
+              src="assets/img/kanga_moves_banner.png"
+              alt="Kanga Moves Upcoming Classes"
+              style="width: 100%"
+            />
+            <span style="text-align: left">
+              <br /><br />
+              <p>
+                KangaMoves classes are baby-wearing dance & fitness classes for
+                caregivers and their babies. Wear your child in your favorite
+                carrier and get ready to groove to some fun, familiar tunes for
+                a 30-minute class that was made for you, but with your child in
+                mind. Babies love the feeling of being close to you and enjoying
+                rhythmic movement. This class gives you time to focus on YOU,
+                but also a chance for some wonderful bonding time with your
+                little one.
+              </p>
+              <br />
+              <p>
+                You do not have to have prior dance experience to enjoy this
+                class. The safety of your child is of the utmost importance and
+                safety protocols are followed in class. You must have postnatal
+                clearance from your doctor to participate in this class.
+              </p>
+              <br />
+            </span>
+            <h3>Upcoming KangaMoves Classes:</h3>
+            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> -->
+            <div class="row">
               <div class="col-md-4">
-                <a href="https://www.hisawyer.com/lily-pad/schedules/activity-set/624914" target="_blank" class="btn btn-block btn-primary">
-                  LilyPad Cincinnati<br/>
-                  Wednesday, May 8<br/>
-                  10:15 am<br/>
+                <a
+                  href="https://www.hisawyer.com/lily-pad/schedules/activity-set/624914"
+                  target="_blank"
+                  class="btn btn-block btn-primary"
+                >
+                  LilyPad Cincinnati<br />
+                  Wednesday, April 10<br />
+                  10:15 am<br />
                   $15 (includes play pass)
                 </a>
+              </div>
+              <div class="col-md-4">
+                <a
+                  href="https://www.hisawyer.com/lily-pad/schedules/activity-set/624914"
+                  target="_blank"
+                  class="btn btn-block btn-primary"
+                >
+                  LilyPad Cincinnati<br />
+                  Wednesday, April 24<br />
+                  10:15 am<br />
+                  $15 (includes play pass)
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a
+                  href="https://www.hisawyer.com/lily-pad/schedules/activity-set/624914"
+                  target="_blank"
+                  class="btn btn-block btn-primary"
+                >
+                  LilyPad Cincinnati<br />
+                  Wednesday, May 8<br />
+                  10:15 am<br />
+                  $15 (includes play pass)
+                </a>
+              </div>
+            </div>
+            <!-- </button> -->
+            <br />
+            <div style="color: #c0c0c0; font-size: 75%">
+              KangaMoves is not affiliated with Zumbini
+            </div>
+
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="exampleModal2"
+              tabindex="-1"
+              aria-labelledby="exampleModal2Label"
+              aria-hidden="true"
+              style="color: black"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModal2Label">
+                      Pay for Zumbini Class
+                    </h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form
+                      action="https://www.paypal.com/cgi-bin/webscr"
+                      method="post"
+                      target="_top"
+                    >
+                      <div class="form-group">
+                        Drop-In Class<br />
+                        Fri 2/19 @ 10 am<br />
+                        $8
+                        <hr />
+                        <input type="hidden" name="cmd" value="_s-xclick" />
+                        <input
+                          type="hidden"
+                          name="hosted_button_id"
+                          value="YV5SHWH4UL98J"
+                        />
+                        <input
+                          type="hidden"
+                          name="on0"
+                          value="Your Name & Child's Name"
+                        />Your Name & Child's Name
+                        <input
+                          type="text"
+                          name="os0"
+                          maxlength="200"
+                          style="width: 100%"
+                          required
+                        />
+                        <input
+                          type="hidden"
+                          name="on1"
+                          value="Your Email Address"
+                        />Your Email Address
+                        <input
+                          type="email"
+                          name="os1"
+                          maxlength="200"
+                          style="width: 100%"
+                          required
+                        />
+                        <br /><br />
+                        <input
+                          type="image"
+                          src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif"
+                          name="submit"
+                          alt="PayPal - The safer, easier way to pay online!"
+                        />
+                        <img
+                          alt=""
+                          src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif"
+                          width="1"
+                          height="1"
+                        />
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="exampleModal3"
+              tabindex="-1"
+              aria-labelledby="exampleModal3Label"
+              aria-hidden="true"
+              style="color: black"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModal3Label">
+                      Pay for Zumbini Class
+                    </h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form
+                      action="https://www.paypal.com/cgi-bin/webscr"
+                      method="post"
+                      target="_top"
+                    >
+                      <div class="form-group">
+                        Drop-In Class<br />
+                        Fri 2/26 @ 10 am<br />
+                        $8
+                        <hr />
+                        <input type="hidden" name="cmd" value="_s-xclick" />
+                        <input
+                          type="hidden"
+                          name="hosted_button_id"
+                          value="KYW6WYPZ3XM9W"
+                        />
+                        <input
+                          type="hidden"
+                          name="on0"
+                          value="Your Name & Child's Name"
+                        />Your Name & Child's Name
+                        <input
+                          type="text"
+                          name="os0"
+                          maxlength="200"
+                          style="width: 100%"
+                          required
+                        />
+                        <input
+                          type="hidden"
+                          name="on1"
+                          value="Your Email Address"
+                        />Your Email Address
+                        <input
+                          type="email"
+                          name="os1"
+                          maxlength="200"
+                          style="width: 100%"
+                          required
+                        />
+                        <br /><br />
+                        <input
+                          type="image"
+                          src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif"
+                          name="submit"
+                          alt="PayPal - The safer, easier way to pay online!"
+                        />
+                        <img
+                          alt=""
+                          src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif"
+                          width="1"
+                          height="1"
+                        />
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        <!-- </button> -->
-        <br>
-        <div style="color:#C0C0C0;font-size:75%;">KangaMoves is not affiliated with Zumbini</div>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModal2Label" aria-hidden="true" style="color:black;">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModal2Label">Pay for Zumbini Class</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-          <div class="form-group">
-            Drop-In Class<br>
-            Fri 2/19 @ 10 am<br>
-            $8<hr>
-            <input type="hidden" name="cmd" value="_s-xclick">
-            <input type="hidden" name="hosted_button_id" value="YV5SHWH4UL98J">
-            <input type="hidden" name="on0" value="Your Name & Child's Name">Your Name & Child's Name
-            <input type="text" name="os0" maxlength="200" style="width:100%" required>
-            <input type="hidden" name="on1" value="Your Email Address">Your Email Address
-            <input type="email" name="os1" maxlength="200" style="width:100%" required>
-            <br><br>
-            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online!">
-            <img alt="" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModal3Label" aria-hidden="true" style="color:black;">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModal3Label">Pay for Zumbini Class</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-          <div class="form-group">
-            Drop-In Class<br>
-            Fri 2/26 @ 10 am<br>
-            $8<hr>
-            <input type="hidden" name="cmd" value="_s-xclick">
-            <input type="hidden" name="hosted_button_id" value="KYW6WYPZ3XM9W">
-            <input type="hidden" name="on0" value="Your Name & Child's Name">Your Name & Child's Name
-            <input type="text" name="os0" maxlength="200" style="width:100%" required>
-            <input type="hidden" name="on1" value="Your Email Address">Your Email Address
-            <input type="email" name="os1" maxlength="200" style="width:100%" required>
-            <br><br>
-            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
         </div>
-      </div>
-    </section><!-- End Kanga -->
+      </section>
 
-    <!-- ======= Bring Zumbini to You Section ======= -->
-    <section id="bring" class="about">
-      <div class="container">
+      <!-- ======= Bring Zumbini to You Section ======= -->
+      <section id="bring" class="about">
+        <div class="container">
+          <div class="section-title">
+            <h2 style="margin-top: 20px">Bring Zumbini to You</h2>
+          </div>
 
-        <div class="section-title">
-          <h2 style="margin-top:20px;">Bring Zumbini to You</h2>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-3" data-aos="fade-right">
-            <img src="assets/img/characters_school.jpg" alt="Zumbini characters at a school" style="width:100%;">
+          <div class="row">
+            <div class="col-lg-3" data-aos="fade-right">
+              <img
+                src="assets/img/characters_school.jpg"
+                alt="Zumbini characters at a school"
+                style="width: 100%"
+              />
+            </div>
+            <div class="col-lg-9" data-aos="fade-up">
+              <h3>Zumbini For Schools</h3>
+              <p>
+                Looking for a new type of music class to bring to your school or
+                daycare? We’d love to give you more information on how to
+                deliver a colorful new twist on singing, dancing, and instrument
+                play to your facility! This can be a one-time class or a weekly
+                music activity.
+              </p>
+              <p>
+                Interested in a virtual option for your school or daycare during
+                Covid? We can help with that, too!
+              </p>
+              <p>
+                To learn more about Zumbini For Schools go to
+                <a href="https://www.zumbini.com/en/schools" target="_blank"
+                  >https://www.zumbini.com/en/schools</a
+                >
+              </p>
+              <p>
+                <a href="#contact" class="btn btn-primary"
+                  >Contact us for inquiries</a
+                >
+              </p>
+            </div>
           </div>
-          <div class="col-lg-9" data-aos="fade-up">
-            <h3>Zumbini For Schools</h3>
-            <p>Looking for a new type of music class to bring to your school or daycare? We’d love to give you more information on how to deliver a colorful new twist on singing, dancing, and instrument play to your facility! This can be a one-time class or a weekly music activity.</p>
-            <p>Interested in a virtual option for your school or daycare during Covid? We can help with that, too!</p>
-            <p>To learn more about Zumbini For Schools go to <a href="https://www.zumbini.com/en/schools" target="_blank">https://www.zumbini.com/en/schools</a></p>
-            <p><a href="#contact" class="btn btn-primary">Contact us for inquiries</a></p>
+          <br />
+          <hr />
+          <br />
+          <div class="row">
+            <div class="col-lg-9" data-aos="fade-up">
+              <h3>Zumbini Birthday Parties</h3>
+              <p>
+                Want to bring Zumbini to your next birthday party? You and your
+                guests can experience a unique party that is full of music and
+                is sure to be memorable for everyone! We customize this class so
+                that it is perfect for the guest of honor. Let us bring the
+                Zumbini fun to you!
+              </p>
+              <p>
+                <a href="#contact" class="btn btn-primary"
+                  >Contact us for inquiries</a
+                >
+              </p>
+            </div>
+            <div class="col-lg-3" data-aos="fade-left">
+              <img
+                src="assets/img/zumbini_party.jpg"
+                alt="Zumbini Birthday Parties"
+                style="width: 100%"
+              />
+            </div>
           </div>
-        </div>
-        <br><hr><br>
-        <div class="row">
-          <div class="col-lg-9" data-aos="fade-up">
-            <h3>Zumbini Birthday Parties</h3>
-            <p>Want to bring Zumbini to your next birthday party? You and your guests can experience a unique party that is full of music and is sure to be memorable for everyone! We customize this class so that it is perfect for the guest of honor. Let us bring the Zumbini fun to you!</p>
-            <p><a href="#contact" class="btn btn-primary">Contact us for inquiries</a></p>
-          </div>
-          <div class="col-lg-3" data-aos="fade-left">
-            <img src="assets/img/zumbini_party.jpg" alt="Zumbini Birthday Parties" style="width:100%;">
+          <br />
+          <hr />
+          <br />
+          <div class="row">
+            <div class="col-lg-3" data-aos="fade-right">
+              <img
+                src="assets/img/private_classes.jpg"
+                alt="Private Zumbini Classes"
+                style="width: 100%"
+              />
+            </div>
+            <div class="col-lg-9" data-aos="fade-up">
+              <h3>Zumbini For Clubs/Groups</h3>
+              <p>
+                We are happy to offer private Zumbini classes for Moms’ Clubs,
+                work groups, friends groups—whatever your group happens to be!
+                These classes can be held indoors or in a comfortable outdoor
+                location of your choice. Let us bring the music, supplies, and
+                fun to your next group activity!
+              </p>
+              <p>
+                We can even bring you a private class during Covid social
+                distancing (must be outside during warmer seasons). We have put
+                a number of guidelines in place to ensure that everything is
+                clean and everyone is safe and distanced.
+              </p>
+              <p>
+                <a href="#contact" class="btn btn-primary"
+                  >Contact us for inquiries</a
+                >
+              </p>
+            </div>
           </div>
         </div>
-        <br><hr><br>
-        <div class="row">
-          <div class="col-lg-3" data-aos="fade-right">
-            <img src="assets/img/private_classes.jpg" alt="Private Zumbini Classes" style="width:100%;">
+      </section>
+      <!-- End Resume Section -->
+
+      <!-- ======= What is Zumbini Section ======= -->
+      <section id="about" class="about">
+        <div class="container">
+          <div class="section-title">
+            <h2 style="margin-top: 20px">What is Zumbini</h2>
           </div>
-          <div class="col-lg-9" data-aos="fade-up">
-            <h3>Zumbini For Clubs/Groups</h3>
-            <p>We are happy to offer private Zumbini classes for Moms’ Clubs, work groups, friends groups—whatever your group happens to be! These classes can be held indoors or in a comfortable outdoor location of your choice. Let us bring the music, supplies, and fun to your next group activity!</p>
-            <p>We can even bring you a private class during Covid social distancing (must be outside during warmer seasons). We have put a number of guidelines in place to ensure that everything is clean and everyone is safe and distanced.</p>
-            <p><a href="#contact" class="btn btn-primary">Contact us for inquiries</a></p>
+
+          <div class="row">
+            <div class="col-lg-5" data-aos="fade-up">
+              <img
+                src="assets/img/whatiszumbini.jpg"
+                alt="Kids waving scarves"
+                style="width: 100%"
+              />
+            </div>
+            <div class="col-lg-7" data-aos="fade-up">
+              <p>
+                Created by Zumba&reg; and BabyFirst, Zumbini&reg; is an early
+                childhood education program that uses original music and
+                movement to promote cognitive, social, fine/gross motor skills,
+                and emotional development for children ages 0 – 4, all while
+                creating the ultimate bonding experience for families.
+              </p>
+              <br />
+              <p>
+                Zumbini&reg; classes always include a parent or legal guardian
+                for each child.
+              </p>
+              <br />
+              <p>
+                Zumbini&reg; classes are offered in sessions, held once per
+                week. In each class you and your child will get to sing, move,
+                play instruments, and use props so that music is introduced in a
+                fun, child-friendly way. With a session registration you will
+                also receive the Zumbini Bundle (see below). We also offer
+                drop-in classes at most locations.
+              </p>
+            </div>
+          </div>
+          <br />
+          <hr />
+          <br />
+          <div class="row">
+            <div
+              class="col-lg-5"
+              data-aos="fade-right"
+              style="text-align: center"
+            >
+              <br /><br /><br /><br />
+              <img
+                src="assets/img/zumba.png"
+                alt="Zumba Logo"
+                style="width: 30%"
+              />
+              <br /><br />
+              <img
+                src="assets/img/babyfirst.png"
+                alt="Baby First Logo"
+                style="width: 30%"
+              />
+            </div>
+            <div
+              class="col-lg-7"
+              data-aos="fade-left"
+              style="text-align: center"
+            >
+              <iframe
+                width="70%"
+                height="315"
+                src="https://www.youtube.com/embed/69hr4r287sc?ecver=1"
+                frameborder="0"
+                gesture="media"
+                allow="encrypted-media"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+          <br />
+          <hr />
+          <br />
+          <div class="row">
+            <div class="col-lg-5" data-aos="fade-up">
+              <img
+                src="assets/img/zumbinibundle.jpg"
+                alt="Kids waving scarves"
+                style="width: 100%"
+              />
+            </div>
+            <div class="col-lg-7" data-aos="fade-up">
+              <p>
+                Each session includes a bundle for you and your family to go
+                home with. The bundle includes a CD with 20 original songs, a
+                songbook (with a story) for you to practice all of the songs at
+                home, and a unique plush doll. You will also get access to all
+                of the songs digitally at zumbini.com.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-    </section><!-- End Resume Section -->
+      </section>
 
-    <!-- ======= What is Zumbini Section ======= -->
-    <section id="about" class="about">
-      <div class="container">
-        <div class="section-title">
-          <h2 style="margin-top:20px;">What is Zumbini</h2>
-        </div>
+      <!-- ======= Featured Section ======= -->
+      <section id="featured" class="about">
+        <div class="container">
+          <div class="section-title">
+            <h2 style="margin-top: 20px; display: none">Featured</h2>
+          </div>
 
-        <div class="row">
-          <div class="col-lg-5" data-aos="fade-up">
-            <img src="assets/img/whatiszumbini.jpg" alt="Kids waving scarves" style="width:100%;">
-          </div>
-          <div class="col-lg-7" data-aos="fade-up">
-            <p>Created by Zumba&reg; and BabyFirst, Zumbini&reg; is an early childhood education program that uses original music and movement to promote cognitive, social, fine/gross motor skills, and emotional development for children ages 0 – 4, all while creating the ultimate bonding experience for families.</p>
-            <br>
-            <p>
-              Zumbini&reg; classes always include a parent or legal guardian for each child.
-            </p>
-            <br>
-            <p>
-              Zumbini&reg; classes are offered in sessions, held once per week. In each class you and your child will get to sing, move, play instruments, and use props so that music is introduced in a fun, child-friendly way. With a session registration you will also receive the Zumbini Bundle (see below). We also offer drop-in classes at most locations.
-            </p>
-          </div>
-        </div>
-        <br><hr><br>
-        <div class="row">
-          <div class="col-lg-5" data-aos="fade-right" style="text-align:center;">
-            <br><br><br><br>
-            <img src="assets/img/zumba.png" alt="Zumba Logo" style="width:30%;">
-            <br><br>
-            <img src="assets/img/babyfirst.png" alt="Baby First Logo" style="width:30%;">
-          </div>
-          <div class="col-lg-7" data-aos="fade-left" style="text-align:center;">
-            <iframe width="70%" height="315" src="https://www.youtube.com/embed/69hr4r287sc?ecver=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+          <div class="row">
+            <div
+              class="col-lg-12"
+              data-aos="fade-left"
+              style="text-align: center"
+            >
+              <h3>Featured on WCPO Channel 9<br />Cincy Lifestyle</h3>
+              <iframe
+                src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FCincyLifestyle%2Fvideos%2F2463802516970755%2F&#038;show_text=1&#038;width=560"
+                width="70%"
+                height="445"
+                style="border: none; overflow: hidden"
+                scrolling="no"
+                frameborder="0"
+                allowTransparency="true"
+                allow="encrypted-media"
+                allowfullscreen="true"
+              ></iframe>
+              <br />
+              <br />
+              <h3>
+                Come be a part of Cincinnati's longest-running Zumbini classes!
+              </h3>
+            </div>
           </div>
         </div>
-        <br><hr><br>
-        <div class="row">
-          <div class="col-lg-5" data-aos="fade-up">
-            <img src="assets/img/zumbinibundle.jpg" alt="Kids waving scarves" style="width:100%;">
+      </section>
+      <!-- End About Section -->
+
+      <hr />
+
+      <!-- ======= Contact Section ======= -->
+      <section id="contact" class="contact">
+        <div class="container">
+          <div class="section-title">
+            <h2 style="margin-top: 20px">Contact Us</h2>
           </div>
-          <div class="col-lg-7" data-aos="fade-up">
-            <p>
-              Each session includes a bundle for you and your family to go home with. The bundle includes a CD with 20 original songs, a songbook (with a story) for you to practice all of the songs at home, and a unique plush doll. You will also get access to all of the songs digitally at zumbini.com.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- ======= Featured Section ======= -->
-    <section id="featured" class="about">
-      <div class="container">
-
-        <div class="section-title">
-          <h2 style="margin-top:20px;display:none;">Featured</h2>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-12" data-aos="fade-left" style="text-align:center;">
-            <h3>Featured on WCPO Channel 9<br>Cincy Lifestyle</h3><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FCincyLifestyle%2Fvideos%2F2463802516970755%2F&#038;show_text=1&#038;width=560" width="70%" height="445" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media" allowFullScreen="true"></iframe>
-            <br>
-            <br>
-            <h3>Come be a part of Cincinnati's longest-running Zumbini classes!</h3>
-          </div>
-        </div>
-      </div>
-    </section><!-- End About Section -->
-
-    <hr>
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container">
-
-        <div class="section-title">
-          <h2 style="margin-top:20px;">Contact Us</h2>
-        </div>
-
-        <div class="row" data-aos="fade-in">
-          <div class="col-lg-12 d-flex align-items-stretch">
-            <form action="https://formspree.io/xeqrwgne" method="post" role="form" id="contactusform" class="php-email-form">
-              <input type="hidden" value="Contact Us" id="type" name="type">
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="name">Your Name</label>
-                  <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required/>
+          <div class="row" data-aos="fade-in">
+            <div class="col-lg-12 d-flex align-items-stretch">
+              <form
+                action="https://formspree.io/xeqrwgne"
+                method="post"
+                role="form"
+                id="contactusform"
+                class="php-email-form"
+              >
+                <input type="hidden" value="Contact Us" id="type" name="type" />
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="name">Your Name</label>
+                    <input
+                      type="text"
+                      name="name"
+                      class="form-control"
+                      id="name"
+                      data-rule="minlen:4"
+                      data-msg="Please enter at least 4 chars"
+                      required
+                    />
+                    <div class="validate"></div>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="phone">Phone Number</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="phone"
+                      id="phone"
+                    />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    name="_replyto"
+                    id="email"
+                    data-rule="email"
+                    data-msg="Please enter a valid email"
+                    required
+                  />
                   <div class="validate"></div>
                 </div>
-                <div class="form-group col-md-6">
-                  <label for="phone">Phone Number</label>
-                  <input type="text" class="form-control" name="phone" id="phone"/>
+                <div class="form-group">
+                  <label for="name">Message</label>
+                  <textarea
+                    class="form-control"
+                    name="message"
+                    rows="10"
+                    data-rule="required"
+                    data-msg="Please write something for us"
+                    required
+                  ></textarea>
+                  <div class="validate"></div>
                 </div>
-              </div>
-              <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" class="form-control" name="_replyto" id="email" data-rule="email" data-msg="Please enter a valid email" required/>
-                <div class="validate"></div>
-              </div>
-              <div class="form-group">
-                <label for="name">Message</label>
-                <textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Please write something for us" required></textarea>
-                <div class="validate"></div>
-              </div>
-              <div class="mb-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit" onclick="checkBeforeSubmit();">Send Message</button></div>
-            </form>
+                <div class="mb-3">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">
+                    Your message has been sent. Thank you!
+                  </div>
+                </div>
+                <div class="text-center">
+                  <button type="submit" onclick="checkBeforeSubmit();">
+                    Send Message
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
-
         </div>
+      </section>
+      <!-- End Contact Section -->
 
-      </div>
-    </section><!-- End Contact Section -->
+      <!-- ======= Extra Section ======= -->
+      <section id="extra" class="extra">
+        <div class="container"><br /><br /><br /><br /></div>
+      </section>
+    </main>
+    <!-- End #main -->
 
-    <!-- ======= Extra Section ======= -->
-    <section id="extra" class="extra">
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
       <div class="container">
-        <br><br><br><br>
+        <div class="sociallinks" style="text-align: center">
+          <a href="https://www.instagram.com/queencityzbini" target="_blank"
+            ><img
+              src="assets/img/instagram.png"
+              style="margin-left: 5px; margin-right: 5px"
+          /></a>
+          <a href="https://www.facebook.com/queencityzbini" target="_blank"
+            ><img
+              src="assets/img/facebook.png"
+              style="margin-left: 5px; margin-right: 5px"
+          /></a>
+          <a href="https://twitter.com/queencityzbini" target="_blank"
+            ><img
+              src="assets/img/twitter.png"
+              style="margin-left: 5px; margin-right: 5px"
+          /></a>
+        </div>
       </div>
-    </section>
+    </footer>
+    <!-- End  Footer -->
 
-  </main><!-- End #main -->
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      <div class="sociallinks" style="text-align:center;">
-        <a href="https://www.instagram.com/queencityzbini" target="_blank"><img src="assets/img/instagram.png" style="margin-left:5px;margin-right:5px;"></a>
-        <a href="https://www.facebook.com/queencityzbini" target="_blank"><img src="assets/img/facebook.png" style="margin-left:5px;margin-right:5px;"></a>
-        <a href="https://twitter.com/queencityzbini" target="_blank"><img src="assets/img/twitter.png" style="margin-left:5px;margin-right:5px;"></a>
-      </div>
-    </div>
-  </footer><!-- End  Footer -->
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="assets/vendor/counterup/counterup.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/venobox/venobox.min.js"></script>
+    <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="assets/vendor/typed.js/typed.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
 
-  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-  <script src="assets/vendor/counterup/counterup.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/venobox/venobox.min.js"></script>
-  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-  <script>
-  $(function () {
-    $(document).scroll(function () {
-      var $nav = $(".fixed-top");
-      var $hero = $(".navbar-brand");
-      $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
-      $hero.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
-    });
-  });
-  </script>
-  <script>
-    function checkBeforeSubmit() {
-      var name = document.getElementById("name").value;
-      // var phone = document.getElementById("phone").value;
-      var email = document.getElementById("email").value;
-      var message = document.getElementById("message").value;
-      if (name && email && message) {
-        $('.sent-message').show();
-        return true;
-      } else {
-        alert("Please fill out all fields");
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+    <script>
+      $(function () {
+        $(document).scroll(function () {
+          var $nav = $(".fixed-top");
+          var $hero = $(".navbar-brand");
+          $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+          $hero.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+        });
+      });
+    </script>
+    <script>
+      function checkBeforeSubmit() {
+        var name = document.getElementById("name").value;
+        // var phone = document.getElementById("phone").value;
+        var email = document.getElementById("email").value;
+        var message = document.getElementById("message").value;
+        if (name && email && message) {
+          $(".sent-message").show();
+          return true;
+        } else {
+          alert("Please fill out all fields");
+        }
       }
-    }
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>
