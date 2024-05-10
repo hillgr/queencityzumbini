@@ -1,0 +1,57 @@
+/**
+ * Welcome to Cloudflare Workers! This is your first worker.
+ *
+ * - Run "npm run dev" in your terminal to start a development server
+ * - Open a browser tab at http://localhost:8787/ to see your worker in action
+ * - Run "npm run deploy" to publish your worker
+ *
+ * Learn more at https://developers.cloudflare.com/workers/
+ */
+
+// export default {
+//   async fetch(request, env, ctx) {
+//     return new Response('Hello World!');
+//   },
+// };
+
+//ABOVE CODE BOILERPLATE
+
+addEventListener('fetch', event => {
+  event.respondWith(handleRequest(event.request));
+});
+
+async function handleRequest(request) {
+  const allowedOrigins = ['https://www.queencityzbini.com', 'http://localhost', 'null'];
+
+  // Check the Origin header
+  const origin = request.headers.get('Origin');
+  if (!allowedOrigins.includes(origin)) {
+      return new Response('Unauthorized', { status: 403 });
+  }
+
+  const url = new URL(request.url);
+  const tab = url.searchParams.get('tab');  // Expecting 'main' or 'sessions'
+
+  let apiUrl;
+  if (tab === 'demos') {
+    apiUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSJjcITPIj5L2wzwwWvsBKgTN7PgFXAUeaOiEh4YFG8zzRYETNO1S3nMhIh8wYL4LPN6p3pyuA-XoeH/pub?gid=0&single=true&output=csv';
+  } else if (tab === 'sessions') {
+    apiUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSJjcITPIj5L2wzwwWvsBKgTN7PgFXAUeaOiEh4YFG8zzRYETNO1S3nMhIh8wYL4LPN6p3pyuA-XoeH/pub?gid=1696093650&single=true&output=csv';
+  } else {
+    return new Response('Tab not specified or unknown', { status: 400 });
+  }
+
+  const response = await fetch(apiUrl, {
+    headers: request.headers
+  });
+
+  // Make the headers mutable by recreating the Response
+  const newResponse = new Response(response.body, response);
+  
+  // Set CORS headers
+  newResponse.headers.set('Access-Control-Allow-Origin', '*');
+  newResponse.headers.set('Access-Control-Allow-Methods', 'GET, OPTIONS');
+  newResponse.headers.set('Access-Control-Allow-Headers', 'Content-Type');
+
+  return newResponse;
+}
