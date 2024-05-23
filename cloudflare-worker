@@ -37,6 +37,8 @@ async function handleRequest(request) {
     apiUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSJjcITPIj5L2wzwwWvsBKgTN7PgFXAUeaOiEh4YFG8zzRYETNO1S3nMhIh8wYL4LPN6p3pyuA-XoeH/pub?gid=0&single=true&output=csv';
   } else if (tab === 'sessions') {
     apiUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSJjcITPIj5L2wzwwWvsBKgTN7PgFXAUeaOiEh4YFG8zzRYETNO1S3nMhIh8wYL4LPN6p3pyuA-XoeH/pub?gid=1696093650&single=true&output=csv';
+  } else if (tab === 'kanga') {
+    apiUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQxBCmtv3Wz-nAmPeoSoGcwPa3ZwMGPWxmL1GgAdpEjjd9yFgvmzoAlOYsdmU8K0KFHUbUWKENN2Vt4/pub?gid=0&single=true&output=csv';
   } else {
     return new Response('Tab not specified or unknown', { status: 400 });
   }

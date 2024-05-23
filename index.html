@@ -302,34 +302,9 @@
             </span>
             <h3>Upcoming KangaMoves Classes:</h3>
             <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> -->
-            <div class="row">
-              <!-- <div class="col-md-4 offset-md-2">
-                <a
-                  href="https://www.hisawyer.com/lily-pad/schedules/activity-set/624914"
-                  target="_blank"
-                  class="btn btn-block btn-primary"
-                  style="margin-right: 10%; margin-bottom: 20px"
-                >
-                  LilyPad Cincinnati<br />
-                  Wednesday, May 8<br />
-                  10:15 am<br />
-                  $15 (includes play pass)
-                </a>
-              </div> -->
-              <div class="col-md-4">
-                <a
-                  href="06-20-24-village-km.html"
-                  target="_blank"
-                  class="btn btn-block btn-primary"
-                  style="margin-right: 10%; margin-bottom: 20px"
-                >
-                  The Village - Lawrenceburg<br />
-                  Thursday, June 20<br />
-                  11:30 am<br />
-                  FREE!
-                </a>
+            <!-- <div class="row"> -->
+              <div class="row" id="kanga-from-sheets">
               </div>
-            </div>
             <!-- </button> -->
             <br />
             <div style="color: #c0c0c0; font-size: 75%">
@@ -952,7 +927,7 @@
                   ${row[2]}<br /> <!-- Day of the week -->
                   ${row[5]} - ${row[6]}<br /> <!-- Start Time - End Time -->
                   ${row[3]} - ${row[4]}<br /> <!-- Start Date - End Date -->
-                  <span style="font-weight: bold; font-size: 110%">${row[7]} (${row[8]})</span><br /> <!-- Price (Notes) -->
+                  <span style="font-weight: bold; font-size: 110%">${row[7]} ${row[8] ? "(" + row[8] + ")" : ""}</span><br /> <!-- Price (Notes) -->
               `;
 
               // Append the link to the div and the div to the display element
@@ -962,7 +937,7 @@
       }
     </script>
     <script>
-      // Fetch data from the 'sessions' tab
+      // Fetch data from the 'demo' tab
       fetch('https://qcz-googlesheet.hillgr.workers.dev/?tab=demos')
       .then(response => response.text())
       .then(csvData => {
@@ -976,7 +951,7 @@
             displayDemosData(rows.slice(1)); // Slice to skip the first row (headers)
           }
       })
-      .catch(error => console.error('Error fetching Sessions Tab:', error));
+      .catch(error => console.error('Error fetching Demos Tab:', error));
 
       function displayDemosData(rows) {
         const demoElement = document.getElementById('demos-from-sheets');
@@ -997,12 +972,57 @@
                 ${row[0]}<br /> <!-- Location -->
                 ${row[1]}<br /> <!-- Day of the week -->
                 ${row[2]} - ${row[3]}<br /> <!-- Date - Time -->
-                <span style="font-weight: bold; font-size: 110%">${row[4]} (${row[5]})</span><br /> <!-- Price (Notes) -->
+                <span style="font-weight: bold; font-size: 110%">${row[4]} ${row[5] ? "(" + row[5] + ")" : ""}</span><br /> <!-- Price (Notes) -->
             `;
 
             // Append the link to the div and the div to the display element
             div.appendChild(a);
             demoElement.appendChild(div);
+        });
+    }
+    </script>
+    <script>
+      // Fetch data from the 'kanga' tab
+      fetch('https://qcz-googlesheet.hillgr.workers.dev/?tab=kanga')
+      .then(response => response.text())
+      .then(csvData => {
+          const rows = csvData.split('\n').map(row => row.split(','));
+          if (!rows || rows.length <= 1) {
+            const noClasses = document.getElementById('kanga-from-sheets')
+            const div = document.createElement('div');
+            div.innerHTML = '<h4>No upcoming classes - check back later!</h4>';
+            noClasses.appendChild(div);
+          } else {
+            displayKangaData(rows.slice(1)); // Slice to skip the first row (headers)
+          }
+      })
+      .catch(error => console.error('Error fetching Kanga Tab:', error));
+
+      function displayKangaData(rows) {
+        const classElement = document.getElementById('kanga-from-sheets');
+
+        rows.forEach(row => {
+            const div = document.createElement('div');
+            div.className = 'col-md-3';
+
+            // Create the link element with all the necessary attributes and formatting
+            const a = document.createElement('a');
+            a.href = row[6]; // Column G: Hyperlink
+            a.target = '_blank';
+            a.className = 'btn btn-block btn-primary';
+            a.style = 'margin-right: 10%; margin-bottom: 20px';
+
+            // Populate the link with the main tab information
+            a.innerHTML = `
+                ${row[0]}<br /> <!-- Location -->
+                ${row[1]}<br /> <!-- Day of the week -->
+                ${row[2]} - ${row[3]}<br /> <!-- Date - Time -->
+                <span style="font-weight: bold; font-size: 110%">${row[4]} ${row[5] ? "(" + row[5] + ")" : ""}</span><br /> <!-- Price (Notes) -->
+            `;
+
+            // Append the link to the div and the div to the display element
+            div.appendChild(a);
+            classElement.appendChild(div);
         });
     }
     </script>
