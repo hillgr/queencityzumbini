@@ -301,11 +301,11 @@
               <br />
             </span>
             <h3>Upcoming KangaMoves Classes:</h3>
-            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> -->
-            <!-- <div class="row"> -->
-              <div class="row" id="kanga-from-sheets">
-              </div>
-            <!-- </button> -->
+            <div class="row" id="kanga-from-sheets">
+            </div>
+            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">
+            sample modal button
+            </button> -->
             <br />
             <div style="color: #c0c0c0; font-size: 75%">
               KangaMoves is not affiliated with Zumbini
@@ -324,7 +324,7 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <h5 class="modal-title" id="exampleModal2Label">
-                      Pay for Zumbini Class
+                      Pay for KangaMoves Class
                     </h5>
                     <button
                       type="button"
@@ -342,15 +342,15 @@
                       target="_top"
                     >
                       <div class="form-group">
-                        Drop-In Class<br />
-                        Fri 2/19 @ 10 am<br />
-                        $8
+                        KangaMoves Class<br />
+                        Thursday 7/11 @ 11:30 am<br />
+                        $12
                         <hr />
                         <input type="hidden" name="cmd" value="_s-xclick" />
                         <input
                           type="hidden"
                           name="hosted_button_id"
-                          value="YV5SHWH4UL98J"
+                          value="FXJWR7YXTAKPY"
                         />
                         <input
                           type="hidden"
@@ -418,7 +418,7 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <h5 class="modal-title" id="exampleModal3Label">
-                      Pay for Zumbini Class
+                      Pay for KangaMoves Class
                     </h5>
                     <button
                       type="button"
@@ -436,15 +436,15 @@
                       target="_top"
                     >
                       <div class="form-group">
-                        Drop-In Class<br />
-                        Fri 2/26 @ 10 am<br />
-                        $8
+                        KangaMoves Class<br />
+                        Thursday 6/20 @ 11:30 am<br />
+                        $12
                         <hr />
                         <input type="hidden" name="cmd" value="_s-xclick" />
                         <input
                           type="hidden"
                           name="hosted_button_id"
-                          value="KYW6WYPZ3XM9W"
+                          value="WD78XXC2AHUDU"
                         />
                         <input
                           type="hidden"
@@ -1007,8 +1007,10 @@
 
             // Create the link element with all the necessary attributes and formatting
             const a = document.createElement('a');
-            a.href = row[6]; // Column G: Hyperlink
+            a.href = row[6] ? row[6] : (row[7] ? row[7] : "#"); // Column G: Hyperlink
             a.target = '_blank';
+            a.setAttribute("data-toggle", row[6] ? "" : "modal");
+            a.setAttribute("data-target", row[6] ? "" : (row[7] ? row[7] : "#"));
             a.className = 'btn btn-block btn-primary';
             a.style = 'margin-right: 10%; margin-bottom: 20px';
 
