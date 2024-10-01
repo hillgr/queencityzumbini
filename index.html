@@ -907,6 +907,7 @@
       // Function to sanitize region names for use in IDs
       function sanitizeRegionName(region) {
         return region
+          .trim()
           .replace(/\s+/g, '-')
           .replace(/[^\w\-]/g, '')
           .toLowerCase();
