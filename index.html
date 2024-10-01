@@ -6,7 +6,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
     <title>Queen City Zumbini</title>
-    <meta content="Cincinnati's First Zumbini Classes" name="descriptison" />
+    <meta content="Cincinnati's First Zumbini Classes" name="description" />
     <meta content="Queen City Zumbini" name="keywords" />
 
     <script defer data-domain="queencityzbini.com" src="https://plausible.io/js/script.js"></script>
@@ -59,6 +59,9 @@
       }
       #virtual-tab {
         outline: 1px solid grey;
+      }
+      .nav-tabs .nav-link {
+        margin-right: 5px;
       }
     </style>
   </head>
@@ -217,7 +220,14 @@
                     <h4 style="text-align: center">Single Classes:</h4>
                   </div>
                 </div>
-                <div class="row" id="demos-from-sheets">
+
+                <!-- Tabs for Demos -->
+                <ul class="nav nav-tabs" id="demoTabs" role="tablist">
+                  <!-- Tabs will be inserted here -->
+                </ul>
+
+                <div class="tab-content" id="demoTabContent">
+                  <!-- Tab panes will be inserted here -->
                 </div>
               </div>
             </div>
@@ -891,74 +901,155 @@
         });
       });
     </script>
+
+    <!-- Custom Scripts -->
     <script>
+      // Function to sanitize region names for use in IDs
+      function sanitizeRegionName(region) {
+        return region
+          .replace(/\s+/g, '-')
+          .replace(/[^\w\-]/g, '')
+          .toLowerCase();
+      }
+
       // Fetch data from the 'sessions' tab
       fetch('https://qcz-googlesheet.hillgr.workers.dev/?tab=sessions')
-          .then(response => response.text())
-          .then(csvData => {
-              const rows = csvData.split('\n').map(row => row.split(','));
-              if (!rows || rows.length <= 1) {
-                  const noSession = document.getElementById('sessions-from-sheets')
-                  const div = document.createElement('div');
-                  div.innerHTML = '<h4>No upcoming sessions - check back later!</h4>';
-                  noSession.appendChild(div);
-              } else {
-                displaySessionsData(rows.slice(1)); // Slice to skip the first row (headers)
-              }
-          })
-          .catch(error => console.error('Error fetching Sessions Tab:', error));
+        .then(response => response.text())
+        .then(csvData => {
+          const rows = csvData.split('\n').map(row => row.split(','));
+          if (!rows || rows.length <= 1) {
+            const noSession = document.getElementById('sessions-from-sheets')
+            const div = document.createElement('div');
+            div.innerHTML = '<h4>No upcoming sessions - check back later!</h4>';
+            noSession.appendChild(div);
+          } else {
+            displaySessionsData(rows.slice(1)); // Slice to skip the first row (headers)
+          }
+        })
+        .catch(error => console.error('Error fetching Sessions Tab:', error));
 
       function displaySessionsData(rows) {
-          const sessionElement = document.getElementById('sessions-from-sheets');
+        const sessionElement = document.getElementById('sessions-from-sheets');
 
-          rows.forEach(row => {
-              const div = document.createElement('div');
-              div.className = 'col-md-4';
+        rows.forEach(row => {
+          const div = document.createElement('div');
+          div.className = 'col-md-4';
 
-              // Create the link element with all the necessary attributes and formatting
-              const a = document.createElement('a');
-              a.href = row[9]; // Column J: Hyperlink
-              a.target = '_blank';
-              a.className = 'btn btn-block btn-secondary';
-              a.style = 'margin-right: 10%; margin-bottom: 20px';
+          // Create the link element with all the necessary attributes and formatting
+          const a = document.createElement('a');
+          a.href = row[9]; // Column J: Hyperlink
+          a.target = '_blank';
+          a.className = 'btn btn-block btn-secondary';
+          a.style = 'margin-right: 10%; margin-bottom: 20px';
 
-              // Populate the link with the session information
-              a.innerHTML = `
-                  <span style="font-weight: bold; font-size: 110%">${row[1]}</span><br /> <!-- Weeks -->
-                  ${row[0]}<br /> <!-- Location -->
-                  ${row[2]}<br /> <!-- Day of the week -->
-                  ${row[5]} - ${row[6]}<br /> <!-- Start Time - End Time -->
-                  ${row[3]} - ${row[4]}<br /> <!-- Start Date - End Date -->
-                  <span style="font-weight: bold; font-size: 110%">${row[7]} ${row[8] ? "(" + row[8] + ")" : ""}</span><br /> <!-- Price (Notes) -->
-              `;
+          // Populate the link with the session information
+          a.innerHTML = `
+              <span style="font-weight: bold; font-size: 110%">${row[1]}</span><br /> <!-- Weeks -->
+              ${row[0]}<br /> <!-- Location -->
+              ${row[2]}<br /> <!-- Day of the week -->
+              ${row[5]} - ${row[6]}<br /> <!-- Start Time - End Time -->
+              ${row[3]} - ${row[4]}<br /> <!-- Start Date - End Date -->
+              <span style="font-weight: bold; font-size: 110%">${row[7]} ${row[8] ? "(" + row[8] + ")" : ""}</span><br /> <!-- Price (Notes) -->
+          `;
 
-              // Append the link to the div and the div to the display element
-              div.appendChild(a);
-              sessionElement.appendChild(div);
-          });
+          // Append the link to the div and the div to the display element
+          div.appendChild(a);
+          sessionElement.appendChild(div);
+        });
       }
     </script>
     <script>
       // Fetch data from the 'demo' tab
       fetch('https://qcz-googlesheet.hillgr.workers.dev/?tab=demos')
-      .then(response => response.text())
-      .then(csvData => {
-          const rows = csvData.split('\n').map(row => row.split(','));
+        .then((response) => response.text())
+        .then((csvData) => {
+          const rows = csvData.split('\n').map((row) => row.split(','));
           if (!rows || rows.length <= 1) {
-            const noDemos = document.getElementById('demos-from-sheets')
+            const noDemos = document.getElementById('demoTabContent');
             const div = document.createElement('div');
             div.innerHTML = '<h4>No upcoming demos - check back later!</h4>';
             noDemos.appendChild(div);
           } else {
-            displayDemosData(rows.slice(1)); // Slice to skip the first row (headers)
+            displayDemosData(rows.slice(1)); // Skip the header row
           }
-      })
-      .catch(error => console.error('Error fetching Demos Tab:', error));
+        })
+        .catch((error) =>
+          console.error('Error fetching Demos Tab:', error)
+        );
 
       function displayDemosData(rows) {
-        const demoElement = document.getElementById('demos-from-sheets');
+        const demoTabsElement = document.getElementById('demoTabs');
+        const demoTabContentElement = document.getElementById('demoTabContent');
 
-        rows.forEach(row => {
+        // Collect unique regions from row[7], filter out empty regions
+        const regions = [
+          ...new Set(
+            rows
+              .map((row) => row[7].trim())
+              .filter((region) => region && region.trim() !== '')
+          ),
+        ];
+
+        if (regions.length === 0) {
+          // No regions found
+          const noDemos = document.getElementById('demoTabContent');
+          const div = document.createElement('div');
+          div.innerHTML = '<h4>No upcoming demos - check back later!</h4>';
+          noDemos.appendChild(div);
+          return;
+        }
+
+        // Create tabs and tab panes for each region
+        regions.forEach((region, index) => {
+          const sanitizedRegion = sanitizeRegionName(region);
+          // Create tab
+          const tab = document.createElement('li');
+          tab.className = 'nav-item';
+          const tabLink = document.createElement('a');
+          tabLink.className = 'nav-link' + (index === 0 ? ' active' : '');
+          tabLink.id = 'tab-' + sanitizedRegion;
+          tabLink.setAttribute('data-toggle', 'tab');
+          tabLink.href = '#tab-content-' + sanitizedRegion;
+          tabLink.role = 'tab';
+          tabLink.setAttribute(
+            'aria-controls',
+            'tab-content-' + sanitizedRegion
+          );
+          tabLink.setAttribute(
+            'aria-selected',
+            index === 0 ? 'true' : 'false'
+          );
+          tabLink.textContent = region;
+          tab.appendChild(tabLink);
+          demoTabsElement.appendChild(tab);
+
+          // Create tab pane
+          const tabPane = document.createElement('div');
+          tabPane.className =
+            'tab-pane fade' + (index === 0 ? ' show active' : '');
+          tabPane.id = 'tab-content-' + sanitizedRegion;
+          tabPane.role = 'tabpanel';
+          tabPane.setAttribute('aria-labelledby', 'tab-' + sanitizedRegion);
+
+          // Create a row inside the tab pane to hold the demos
+          const rowDiv = document.createElement('div');
+          rowDiv.className = 'row';
+          tabPane.appendChild(rowDiv);
+          demoTabContentElement.appendChild(tabPane);
+        });
+
+        // For each demo, add it to the appropriate region tab pane
+        rows.forEach((row) => {
+          const region = row[7];
+          if (!region || region.trim() === '') return; // Skip if region is empty
+          const sanitizedRegion = sanitizeRegionName(region);
+          // Find the tab pane for this region
+          const tabPane = document.getElementById(
+            'tab-content-' + sanitizedRegion
+          );
+          if (tabPane) {
+            const rowDiv = tabPane.querySelector('.row');
+
             const div = document.createElement('div');
             div.className = 'col-md-3';
 
@@ -971,23 +1062,32 @@
 
             // Populate the link with the main tab information
             a.innerHTML = `
-                ${row[0]}<br /> <!-- Location -->
-                ${row[1]}<br /> <!-- Day of the week -->
-                ${row[2]} - ${row[3]}<br /> <!-- Date - Time -->
-                <span style="font-weight: bold; font-size: 110%">${row[4]} ${row[5] ? "(" + row[5] + ")" : ""}</span><br /> <!-- Price (Notes) -->
+              ${row[0]}<br /> <!-- Location -->
+              ${row[1]}<br /> <!-- Day of the week -->
+              ${row[2]} - ${row[3]}<br /> <!-- Date - Time -->
+              <span style="font-weight: bold; font-size: 110%">${row[4]} ${
+              row[5] ? '(' + row[5] + ')' : ''
+            }</span><br /> <!-- Price (Notes) -->
             `;
 
-            // Append the link to the div and the div to the display element
+            // Append the link to the div and the div to the rowDiv
             div.appendChild(a);
-            demoElement.appendChild(div);
+            rowDiv.appendChild(div);
+          }
         });
-    }
+
+        // Initialize the tabs (in case it's needed)
+        $('#demoTabs a').click(function (e) {
+          e.preventDefault();
+          $(this).tab('show');
+        });
+      }
     </script>
     <script>
       // Fetch data from the 'kanga' tab
       fetch('https://qcz-googlesheet.hillgr.workers.dev/?tab=kanga')
-      .then(response => response.text())
-      .then(csvData => {
+        .then(response => response.text())
+        .then(csvData => {
           const rows = csvData.split('\n').map(row => row.split(','));
           if (!rows || rows.length <= 1) {
             const noClasses = document.getElementById('kanga-from-sheets')
@@ -997,38 +1097,38 @@
           } else {
             displayKangaData(rows.slice(1)); // Slice to skip the first row (headers)
           }
-      })
-      .catch(error => console.error('Error fetching Kanga Tab:', error));
+        })
+        .catch(error => console.error('Error fetching Kanga Tab:', error));
 
       function displayKangaData(rows) {
         const classElement = document.getElementById('kanga-from-sheets');
 
         rows.forEach(row => {
-            const div = document.createElement('div');
-            div.className = 'col-md-3';
+          const div = document.createElement('div');
+          div.className = 'col-md-3';
 
-            // Create the link element with all the necessary attributes and formatting
-            const a = document.createElement('a');
-            a.href = row[6] ? row[6] : (row[7] ? row[7] : "#"); // Column G: Hyperlink
-            a.target = '_blank';
-            a.setAttribute("data-toggle", row[6] ? "" : "modal");
-            a.setAttribute("data-target", row[6] ? "" : (row[7] ? row[7] : "#"));
-            a.className = 'btn btn-block btn-primary';
-            a.style = 'margin-right: 10%; margin-bottom: 20px';
+          // Create the link element with all the necessary attributes and formatting
+          const a = document.createElement('a');
+          a.href = row[6] ? row[6] : (row[7] ? row[7] : "#"); // Column G: Hyperlink
+          a.target = '_blank';
+          a.setAttribute("data-toggle", row[6] ? "" : "modal");
+          a.setAttribute("data-target", row[6] ? "" : (row[7] ? row[7] : "#"));
+          a.className = 'btn btn-block btn-primary';
+          a.style = 'margin-right: 10%; margin-bottom: 20px';
 
-            // Populate the link with the main tab information
-            a.innerHTML = `
-                ${row[0]}<br /> <!-- Location -->
-                ${row[1]}<br /> <!-- Day of the week -->
-                ${row[2]} - ${row[3]}<br /> <!-- Date - Time -->
-                <span style="font-weight: bold; font-size: 110%">${row[4]} ${row[5] ? "(" + row[5] + ")" : ""}</span><br /> <!-- Price (Notes) -->
-            `;
+          // Populate the link with the main tab information
+          a.innerHTML = `
+              ${row[0]}<br /> <!-- Location -->
+              ${row[1]}<br /> <!-- Day of the week -->
+              ${row[2]} - ${row[3]}<br /> <!-- Date - Time -->
+              <span style="font-weight: bold; font-size: 110%">${row[4]} ${row[5] ? "(" + row[5] + ")" : ""}</span><br /> <!-- Price (Notes) -->
+          `;
 
-            // Append the link to the div and the div to the display element
-            div.appendChild(a);
-            classElement.appendChild(div);
+          // Append the link to the div and the div to the display element
+          div.appendChild(a);
+          classElement.appendChild(div);
         });
-    }
+      }
     </script>
   </body>
 </html>
